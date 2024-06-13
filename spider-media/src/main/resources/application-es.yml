@@ -1,0 +1,3 @@
+spring:
+  elasticsearch:
+    uris: http://10.57.36.17:9200,http://10.57.36.18:9200,http://10.57.36.19:9200

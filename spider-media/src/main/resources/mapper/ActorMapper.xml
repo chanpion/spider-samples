@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chenpp.spider.media.mapper.ActorMapper">
+
+    <resultMap id="BaseResultMap" type="com.chenpp.spider.media.entity.Actor">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="born" property="born" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="columns">
+        id,name,born
+    </sql>
+
+
+</mapper>
