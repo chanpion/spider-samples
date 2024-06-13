@@ -69,12 +69,6 @@ public class EsTest {
         System.out.println(count);
     }
 
-    @Test
-    public void existsById() {
-        boolean b = elasticSearchService.existsById(102L);
-
-        System.out.println(b);
-    }
 
     @Test
     public void findByTitleOrContent() {
