@@ -1,0 +1,26 @@
+### Java ###
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+############################################################
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+############################################################
+### Maven or java file ###
+target/
+
+############################################################
+### OSX ###
+.DS_Store
+*/.DS_Store
+**/*.DS_Store
+.AppleDouble
+.LSOverride
