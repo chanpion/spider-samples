@@ -16,6 +16,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.chenpp.common</groupId>
+            <artifactId>common-util</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
@@ -52,9 +57,15 @@
         </dependency>
         <dependency>
             <groupId>us.codecraft</groupId>
-            <artifactId>webmagic-samples</artifactId>
+            <artifactId>webmagic-extension</artifactId>
             <version>0.10.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.21.0</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.apache.commons</groupId>

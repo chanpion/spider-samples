@@ -16,4 +16,4 @@ CREATE TABLE IF NOT EXISTS `movie`
     id BIGINT NOT NULL COMMENT '主键ID',
     title VARCHAR(50) NULL DEFAULT NULL COMMENT '姓名',
     PRIMARY KEY (id)
-    );
+);

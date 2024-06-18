@@ -12,3 +12,9 @@ spring:
 
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
+
+spider:
+  sink-type: file
+  file:
+    entity-file-path: /tmp/spider/entity.csv
+    relation-file-path: /tmp/spider/relation.csv

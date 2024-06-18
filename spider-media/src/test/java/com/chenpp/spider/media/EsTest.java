@@ -2,6 +2,8 @@ package com.chenpp.spider.media;
 
 import com.chenpp.spider.media.search.ElasticSearchService;
 import com.chenpp.spider.media.search.ElasticsearchDocument;
+import com.chenpp.spider.media.search.EntityDoc;
+import com.chenpp.spider.media.search.EntityRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,7 +13,9 @@ import org.springframework.data.elasticsearch.core.SearchHit;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author April.Chen
@@ -24,18 +28,21 @@ public class EsTest {
     private ElasticSearchService elasticSearchService;
 
     @Resource
-    private ElasticsearchRestTemplate elasticsearchTemplate;
-//
-//    @Resource
-//    private ElasticsearchTemplate elasticsearchTemplate;
+    private ElasticsearchRestTemplate elasticsearchRestTemplate;
+
+
+    @Resource
+    private EntityRepository entityRepository;
+
+    @Resource
+    private ElasticsearchTemplate elasticsearchTemplate;
+
     /**
      * 创建索引和映射
      */
     @Test
     public void createIndex() {
         elasticsearchTemplate.indexOps(ElasticsearchDocument.class).create();
-//        elasticsearchTemplate.createIndex(ElasticsearchDocument.class);
-//        elasticsearchTemplate.putMapping(ElasticsearchDocument.class);
     }
 
     /**
@@ -79,5 +86,22 @@ public class EsTest {
             List<String> content = elasticSearchService.getHighlightField("content");
             System.out.println(content);
         }
+    }
+
+    @Test
+    public void addEntityDoc() {
+        EntityDoc doc = new EntityDoc();
+        doc.setUid(System.nanoTime() + "");
+        doc.setLabel("person");
+        doc.setName("张三");
+
+        Map<String, Object> properties = new HashMap<>();
+        properties.put("age", 18);
+        properties.put("sex", "男");
+        properties.put("name", "张三");
+
+        doc.setProperties(properties);
+
+        entityRepository.save(doc);
     }
 }

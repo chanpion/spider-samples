@@ -17,7 +17,7 @@ public class MediaSpider {
     public void start() {
         Spider.create(mediaProcessor)
                 // 从https://www.xxx.com/explore开始抓
-                .addUrl("https://baike.baidu.com/item/知识图谱")
+                .addUrl("https://baike.baidu.com/item/石川澪")
 //                .addPipeline(new ConsolePipeline())
                 // 抓取到的数据存数据库
                 .addPipeline(mediaPipeline)
