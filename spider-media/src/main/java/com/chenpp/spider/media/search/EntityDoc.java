@@ -17,15 +17,15 @@ import java.util.Map;
 public class EntityDoc {
 
     @Id
-    @Field(store = true, index = true, type = FieldType.Text)
+    @Field(store = true, type = FieldType.Keyword)
     private String uid;
 
-    @Field(index = true, type = FieldType.Keyword)
+    @Field(type = FieldType.Keyword)
     private String label;
 
-    @Field(index = true, analyzer = "ik_smart", store = true, searchAnalyzer = "ik_smart", type = FieldType.Text)
+    @Field(analyzer = "ik_smart", store = true, searchAnalyzer = "ik_smart", type = FieldType.Text)
     private String name;
 
-    @Field(store = true, type = FieldType.Object)
+    @Field(store = true, analyzer = "ik_smart", searchAnalyzer = "ik_smart", type = FieldType.Object)
     private Map<String, Object> properties;
 }
